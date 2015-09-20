@@ -14,12 +14,17 @@ function Polyhedron(vertices, edges, faces) {
 }
 
 // Create a tetrahedron with corners at (0, 0, 0), (0, 1, 0), (1, 0, 0), (0, 0, 1).
-/*function Tetrahedron() {
+function Tetrahedron() {
     var vertices = [(0, 0, 0), (0, 1, 0), (1, 0, 0), (0, 0, 1)],
-        edges = [...], // #edges = 6
-        faces = [...]; // #faces = 4
+        edges = [(0, 2), (0, 3), (2, 3), // edges (0-2) for bottom face (y = 0)
+                 (0, 1), (1, 3), // edges (3- 4) (x = 0)
+                 (1, 2)], // edge 5 (z = 0)
+        faces = [[0, 1, 2], // bottom face (y = 0)
+                 [1, 3, 4], // left face (x = 0)
+                 [0, 3, 5], // back face (z = 0)
+                 [2, 4, 5]]; // front face
     return new Polyhedron(vertices, edges, faces);
-}*/
+}
 
 // Create a cube with one corner at the origin and another at (1, 1, 1)
 function Cube() {
