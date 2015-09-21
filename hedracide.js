@@ -45,3 +45,34 @@ function Cube() {
                  [1, 2, 6, 9]]; // back face (z = 0);
     return new Polyhedron(vertices, edges, faces);
 }
+
+
+// WavefrontNode
+// type = "ray", "wideray", or "segment"
+// -- ray
+//    (origin point, direction)
+//
+// -- wideray
+//    (origin point, direction1 point, direction2 point)
+//
+//    The direction1 and direction2 points form a triangle
+//    indicating the amount of spread for the wide ray in the
+//    plane of travel.
+
+// -- segment
+//
+//    edge index - specifies which edge
+//    point1 (on the specified edge) + angle indicating amount of spread
+//    point2 (on the specified edge) + angle indicating amount of spread
+
+function WavefrontNode(type, data) {
+    if (type === 'ray') {
+    } else if (type === 'wideray') {
+    } else if (type === 'segment') {
+    } else {
+        console.log("Error unknown wavefrontnode type -" + type);
+    }
+    self.type = type;
+    self.data = data;
+    return Object.freeze(self);
+}
